@@ -26,14 +26,14 @@ func majorityElement(nums []int) (int,err) {
 func findCandidate(nums []int) (int, err) {
 	majIndex := 0
 	count := 1
-	for _,val := range nums {
-		if nums[maj_index] == val {
+	for index,val := range nums {
+		if nums[majIndex] == val {
 			count++
 		} else {
 			count--
 		}
 		if count == 0 {
-			majIndex = i
+			majIndex = index
 			count = 1
 		}
 	}
