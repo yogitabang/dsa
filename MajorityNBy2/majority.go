@@ -20,6 +20,21 @@ func majorityElement(nums []int) (int,err) {
     return 0,errors.New("No majority element present")
 }
 
+func majorityElement(nums []int) (int,err) {
+    major := len(nums)/2
+    var freqmap = make(map[int]int)
+    for _,val := range nums {
+        freqmap[val] = freqmap[val]+1
+        maj:=freqmap[val]
+        if maj > major {
+            return val,nil
+        }
+    }
+    
+    
+    return 0,errors.New("No majority element present")
+}
+
 //Optimal algo - moore's voting algo
 //Uses O(n) time
 //Uses O(1) space
